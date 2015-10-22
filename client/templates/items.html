@@ -1,7 +1,7 @@
 <template name="items">
   <h2>
     acount(void* s);
-    <span class="badge">{{numberOfShown}}/{{numberOfItems}}</span>
+    <span class="badge">{{numberOfShown "I"}}/{{numberOfItems "I"}}</span>
   </h2>
 
   {{#if currentUser}}
@@ -16,7 +16,21 @@
 
 
   <div class="row">
-  {{#each items}}
+  {{#each items "I"}}
+    <div class="col-md-4">
+      {{>item}}
+    </div>
+  {{/each}}
+  </div>
+
+
+  <h2>
+    phase II
+    <span class="badge">{{numberOfShown "II"}}/{{numberOfItems "II"}}</span>
+  </h2>
+
+  <div class="row">
+  {{#each items "II"}}
     <div class="col-md-4">
       {{>item}}
     </div>

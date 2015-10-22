@@ -1,15 +1,15 @@
 Template.items.helpers({
-  numberOfItems: function () {
-    return Items.find({}).count();
+  numberOfItems: function (phase) {
+    return Items.find({phase: phase}).count();
   },
-  numberOfShown: function () {
-    return Items.find({ shown: true }).count();
+  numberOfShown: function (phase) {
+    return Items.find({ shown: true, phase: phase}).count();
   },
   numberOfHidden: function () {
     return Items.find({ shown: false }).count();
   },
-  items: function () {
-    return Items.find({});
+  items: function (phase) {
+    return Items.find({phase: phase});
   },
 });
 
