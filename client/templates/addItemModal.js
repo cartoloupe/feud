@@ -4,14 +4,17 @@ Template.addItemModal.events({
 
     var name = event.target.name.value;
     var details = event.target.details.value.split(commaSeparator);
+    var phase = event.target.phase.value
 
     Meteor.call('insertItem', {
       name: name,
-      details: details
+      details: details,
+      phase: phase
     });
 
     event.target.name.value = "";
-    $(event.target.details).clearOptions();
+    event.target.details.value = "";
+    event.target.phase.value = "";
 
     return false;
   }
