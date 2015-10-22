@@ -12,73 +12,11 @@
   {{/if}}
 
 
-  <h2>
-    start
-    <span class="badge">{{numberOfShown "start"}}/{{numberOfItems "start"}}</span>
-  </h2>
-  <div class="row">
-  {{#each items "start"}}
-    <div class="col-md-4">
-      {{>item}}
-    </div>
-  {{/each}}
-  </div>
-
-
-  <h2>
-    early
-    <span class="badge">{{numberOfShown "early"}}/{{numberOfItems "early"}}</span>
-  </h2>
-  <div class="row">
-  {{#each items "early"}}
-    <div class="col-md-4">
-      {{>item}}
-    </div>
-  {{/each}}
-  </div>
-
-
-  <h2>
-    middle
-    <span class="badge">{{numberOfShown "middle"}}/{{numberOfItems "middle"}}</span>
-  </h2>
-  <div class="row">
-  {{#each items "middle"}}
-    <div class="col-md-4">
-      {{>item}}
-    </div>
-  {{/each}}
-  </div>
-
-
-  <h2>
-    before deployment
-    <span class="badge">{{numberOfShown "before deployment"}}/{{numberOfItems "before deployment"}}</span>
-  </h2>
-  <div class="row">
-  {{#each items "before deployment"}}
-    <div class="col-md-4">
-      {{>item}}
-    </div>
-  {{/each}}
-  </div>
-
-
-  <h2>
-    after deployment
-    <span class="badge">{{numberOfShown "after deployment"}}/{{numberOfItems "after deployment"}}</span>
-  </h2>
-  <div class="row">
-  {{#each items "after deployment"}}
-    <div class="col-md-4">
-      {{>item}}
-    </div>
-  {{/each}}
-  </div>
-
-
-
-
+  {{>process_column phase="start"}}
+  {{>process_column phase="early"}}
+  {{>process_column phase="middle"}}
+  {{>process_column phase="before deployment"}}
+  {{>process_column phase="after deployment"}}
 
 
   {{#if currentUser}}

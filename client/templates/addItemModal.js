@@ -20,6 +20,7 @@ Template.addItemModal.events({
   }
 });
 
+
 Template.addItemModal.rendered = function () {
   $(document).ready(function () {
     $.material.init();

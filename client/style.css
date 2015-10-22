@@ -30,3 +30,11 @@
 .btn.btn-primary.show-it {
   background-color: red;
 }
+
+span.badge {
+  font-size: 24px;
+}
+
+.spacebox {
+  padding: 0 5px 0 5px;
+}

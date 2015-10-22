@@ -1,0 +1,17 @@
+<template name="process_column">
+<div class="col-md-2">
+  <div class="spacebox">
+
+    <h2>
+      {{phase}}
+      <span class="badge">{{numberOfShown phase}}/{{numberOfItems phase}}</span>
+    </h2>
+    <div class="row">
+    {{#each items phase}}
+        {{>item}}
+    {{/each}}
+    </div>
+
+  </div>
+</div>
+</template>
