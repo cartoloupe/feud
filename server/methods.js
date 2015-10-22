@@ -23,5 +23,9 @@ Meteor.methods({
   },
   allHide: function () {
     Items.update({}, {$set: {shown: false}}, {multi: true});
+  },
+  allClear: function () {
+    Items.remove({});
   }
+
 });

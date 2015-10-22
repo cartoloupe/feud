@@ -12,7 +12,9 @@
         <b>{{name}}</b>
         <br>
         <p>
-          {{details}}
+          {{#each detail in details}}
+            {{detail}} <br>
+          {{/each}}
         </p>
         {{else}}
         <p>...</p>
