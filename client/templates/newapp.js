@@ -1,4 +1,4 @@
-Template.items.events({
+Template.newapp.events({
   "click .show-it": function (event) {
     Meteor.call('showItems');
     return false;
@@ -9,7 +9,7 @@ Template.items.events({
   }
 });
 
-Template.items.rendered = function () {
+Template.newapp.rendered = function () {
   $(document).ready(function () {
     $.material.init();
   });
