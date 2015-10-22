@@ -1,0 +1,38 @@
+<template name="item">
+<div class="panel panel-default" >
+  <div class="panel-heading" >
+      {{#if currentUser}}
+        <b>{{name}}</b>
+        <br>
+        <p>
+          {{details}}
+        </p>
+      {{else}}
+        {{#if shown}}
+        <b>{{name}}</b>
+        <br>
+        <p>
+          {{details}}
+        </p>
+        {{else}}
+        <p>...</p>
+        {{/if}}
+      {{/if}}
+    </div>
+  </div>
+
+  <div>
+    <form class="form-inline pull-right">
+
+      {{#if currentUser}}
+        {{#if shown}}
+          <button type="button" class="btn btn-primary btn-xs hide-it">hide</button>
+        {{else}}
+          <button type="button" class="btn btn-primary btn-xs show-it">show</button>
+        {{/if}}
+        <button type="button" class="btn btn-primary btn-xs delete-it">x</button>
+      {{/if}}
+    </form>
+  </div>
+
+</template>

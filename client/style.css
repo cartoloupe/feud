@@ -1,0 +1,32 @@
+.logo {
+  height: 1.5em;
+}
+
+.shown {
+  background-color: orange;
+}
+
+.navbar-text {
+  font-size: 24px;
+}
+
+.navbar-right {
+  font-size: 12;
+  padding-top: 7px;
+}
+
+.panel > .panel-heading {
+  background-image: none;
+}
+
+.panel > .panel-heading-show {
+  background-image: none;
+  background-color: green;
+}
+
+.btn.btn-primary.hide-it {
+  background-color: green;
+}
+.btn.btn-primary.show-it {
+  background-color: red;
+}
