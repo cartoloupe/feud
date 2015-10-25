@@ -36,5 +36,7 @@ Template.addItemModal.rendered = function () {
         'remove_button'
       ]
     });
+
+
   });
 };

@@ -12,3 +12,14 @@ Template.item.events({
     return false;
   }
 });
+
+Template.item.onRendered(function() {
+  console.log("invoked");
+});
+
+Template.shown_item.onRendered(function() {
+  console.log("invoked");
+  console.log(this);
+  console.log(this.$(".stuff"));
+  this.$(".stuff")[0].scrollIntoView();
+});

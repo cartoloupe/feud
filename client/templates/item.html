@@ -9,15 +9,9 @@
         </p>
       {{else}}
         {{#if shown}}
-        <b>{{name}}</b>
-        <br>
-        <p>
-          {{#each detail in details}}
-            {{detail}} <br>
-          {{/each}}
-        </p>
+          {{>shown_item}}
         {{else}}
-        <p>...</p>
+          {{>hidden_item}}
         {{/if}}
       {{/if}}
 
