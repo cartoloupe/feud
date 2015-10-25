@@ -13,13 +13,14 @@ Template.item.events({
   }
 });
 
-Template.item.onRendered(function() {
-  console.log("invoked");
-});
-
 Template.shown_item.onRendered(function() {
-  console.log("invoked");
-  console.log(this);
-  console.log(this.$(".stuff"));
-  this.$(".stuff")[0].scrollIntoView();
+  $(".stuff").removeClass('shown');
+  this.$(".stuff").addClass('shown');
+  $('html,body').animate({
+    scrollTop: this.$(".stuff").offset().top},
+    'slow'
+  );
+  this.$(".stuff").animate({
+    backgroundColor: "#faa"
+  }, 1000);
 });
