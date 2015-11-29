@@ -1,0 +1,13 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.components div {
+  font-size: 50px;
+  width: 300px;
+  margin: 3px;
+  padding: 10px;
+  border: 1px solid green;
+  background-color: #ddd;
+  position: absolute;
+}
