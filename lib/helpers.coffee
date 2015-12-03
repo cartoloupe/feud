@@ -3,5 +3,6 @@ if Meteor.isClient
     $(this.firstNode).find('a').first().click ->
       parent = $(this).parent()
       parent.toggleClass("width777")
-      parent.find('ul').toggle("fold", 300)
+      parent.toggleClass("zhigh")
+      parent.find('ul').first().toggle("fold", 300)
 

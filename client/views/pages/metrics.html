@@ -3,6 +3,7 @@
   <h3>with grafana et. al.</h3>
 
   <div class="components">
+    {{>elk}}
     {{>summary}}
     {{>basic_component class="3rd party"}}
     {{>basic_component class="ceo"}}
@@ -172,12 +173,19 @@ end
 
 <template name="cifter">
   <div class="components cifter">
-    <a>cifter</a>
+    <a>test runners</a>
     {{>handle}}
     <ul>
       <li>runs tests in parallel</li>
       <li>maintains status of tests</li>
+      <li>e.g. tef-cucumber</li>
     </ul>
+    <!--
+    <ul>
+      <li>runs tests in parallel</li>
+      <li>maintains status of tests</li>
+    </ul>
+    -->
   </div>
 </template>
 
@@ -189,15 +197,10 @@ end
       <li>$lt 50, $gt 500, $gt 1000, ~10k</li>
       <li>wipped/running</li>
       <li>flaky</li>
+      <li>always passing</li>
       <li>slow</li>
+      <li>important</li>
     </ul>
-  </div>
-</template>
-
-<template name="basic_component">
-  <div class="components {{class}}">
-    <p>{{class}}</p>
-    {{>handle}}
   </div>
 </template>
 
@@ -234,14 +237,27 @@ end
         <li>monitoring</li>
         <li>risk assessment</li>
         <li>prioritizing</li>
+        <li class="show_elk"><i>tracking</i></li>
+        <li><i>drill down</i></li>
       </ul>
     </ul>
-
-    {{>imgpanel img="/jenkins.png"}}
+    {{>imgpanel img="/show_actual_graphs.png"}}
     {{>imgclear}}
   </div>
 </template>
 
+<template name="elk">
+  {{>basic_component class="kibana"}}
+  {{>basic_component class="elastic search"}}
+  {{>basic_component class="logstash"}}
+</template>
+
+<template name="basic_component">
+  <div class="components {{class}}">
+    <p>{{class}}</p>
+    {{>handle}}
+  </div>
+</template>
 
 
 

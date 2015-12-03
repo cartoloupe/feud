@@ -20,8 +20,6 @@ Template.imgpanel.rendered = ->
     $(this).next()
       .toggle("fold", 500)
       .draggable
-        start: ->
-          $(this).zIndex(1000);
 
 Template.imgclear.rendered = ->
   $(this.firstNode).click ->
@@ -33,8 +31,6 @@ Template.handle.rendered = ->
   handle.parent()
     .draggable
       handle: ".handle"
-      start: ->
-        $(this).zIndex(999);
 
 Template.metrics_card.rendered = basic_list_clicker
 
@@ -49,5 +45,11 @@ Template.scripts.rendered = basic_list_clicker
 Template.jenkins.rendered = basic_list_clicker
 
 Template.summary.rendered = basic_list_clicker
+
+Template.summary.events
+  'click .show_elk': ->
+    $('.kibana').toggle("fade", 300)
+    $('.elastic').toggle("fade", 300)
+    $('.logstash').toggle("fade", 300)
 
 

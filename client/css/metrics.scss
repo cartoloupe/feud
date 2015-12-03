@@ -12,6 +12,7 @@
   background-color: #ddd;
   position: absolute;
   border-radius: 5%;
+  z-index: 800;
 }
 
 img {
@@ -19,7 +20,15 @@ img {
   position: absolute;
   left: -50%;
   top: 90%;
-  z-index: 1000;
+  z-index: 990;
+}
+
+.components .elk {
+  left: -20%;
+  height: 500px;
+  display: none;
+  z-index: 900;
+  position: relative;
 }
 
 .components .handle {
@@ -79,7 +88,8 @@ img {
 .width888 {
   width: 888px;
 }
+.zhigh {
+  z-index: 999;
+}
 
 
-.statsd_ruby { left: 15%; }
-.statsd_clients {left: 10%}
