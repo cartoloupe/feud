@@ -1,30 +1,172 @@
 <template name="metrics">
-  <h1>visualing metrics</h1>
+  <h1>visualising metrics</h1>
   <h3>with grafana et. al.</h3>
 
   <div class="components">
-
-    <div> 3rd party </div>
-    <div> ceo </div>
-    <div> pm </div>
-    <div> stakeholders </div>
-    <div> jenkins </div>
-    <div> me </div>
-    <div> you </div>
-    <div> users </div>
-    <div> envdotdotdot </div>
-    <div> env3 </div>
-    <div> env2 </div>
-    <div> env1 </div>
-    <div> tests </div>
-    <div> cifter </div>
-    <div> metrics </div>
-    <div class="cql"> cql </div>
-    <div> statsd clients </div>
-    <div> statsd-ruby </div>
-    <div> statsd </div>
-    <div> graphite </div>
-    <div class="graph"> grafana graph </div>
+    {{>basic_component class="3rd party"}}
+    {{>basic_component class="ceo"}}
+    {{>basic_component class="pm"}}
+    {{>basic_component class="stakeholders"}}
+    {{>basic_component class="jenkins"}}
+    {{>basic_component class="me"}}
+    {{>basic_component class="you"}}
+    {{>basic_component class="users"}}
+    {{>basic_component class="production"}}
+    {{>basic_component class="env3"}}
+    {{>basic_component class="env2"}}
+    {{>basic_component class="env1"}}
+    {{>basic_component class="t1"}}
+    {{>tests}}
+    {{>cifter}}
+    {{>metrics_card}}
+    {{>cql}}
+    {{>statsd_clients}}
+    {{>statsd_ruby}}
+    {{>statsd}}
+    {{>graphite}}
+    {{>graph}}
   </div>
 
+</template>
+
+<template name="graph">
+  <div class="components graph">
+    <a class="show">grafana graphs</a>
+      <img src='/graph1.png'>
+    {{>handle}}
+    {{>imgpanel img="/graph1.png"}}
+    {{>imgclear}}
+  </div>
+</template>
+
+<template name="graphite">
+  <div class="components graphite">
+    <a class="show">graphite</a>
+    <img src='/graphite.png' class="graphite">
+    {{>handle}}
+  </div>
+</template>
+
+<template name="statsd">
+  <div class="components statsd">
+    <a>statsd</a>
+    {{>handle}}
+    <ul>
+      <li>front-end proxy for graphite metrics server</li>
+      <li>push-based</li>
+      <li><a href="https://github.com/etsy/statsd/wiki">wiki</a></li>
+      <li><a href="https://github.com/b/statds_spec">protocol++</a></li>
+    </ul>
+  </div>
+</template>
+
+<template name="statsd_ruby">
+  <div class="components statsd_ruby">
+    <a>statsd-ruby</a>
+    {{>handle}}
+    <div class="codeblock">
+      {{#markdown}}
+```ruby
+describe "#increment" do
+it "should format the message according to the statsd spec" do
+  @statsd.increment('foobar')
+  @statsd.socket.recv.must_equal ['foobar:1|c']
+end
+```
+      {{/markdown}}
+      </div>
+  </div>
+</template>
+
+<template name="statsd_clients">
+  <div class="components statsd_clients">
+    <a>statsd-clients</a>
+    {{>handle}}
+    {{>imgpanel img="/statsd_clients.png"}}
+    {{>imgpanel img="/static_statistics.png"}}
+  </div>
+</template>
+
+<template name="cql">
+  <div class="components cql">
+    <a>cql</a>
+    {{>handle}}
+    <ul>
+      <li><a href="https://github.com/enkessler/cql">github</a></li>
+      <li><a href="http://www.relishapp.com/enkessler/cql/docs">docs</a></li>
+    </ul>
+
+    {{>imgpanel img="/cql_top.png"}}
+    {{>imgpanel img="/cql_total_tests.png"}}
+    {{>imgpanel img="/cql_wipped_tests.png"}}
+    {{>imgpanel img="/cql_total_steps.png"}}
+    {{>imgpanel img="/cql_running_tests.png"}}
+    {{>imgpanel img="/cql_tagged_tests.png"}}
+    {{>imgclear}}
+  </div>
+</template>
+
+<template name="metrics_card">
+  <div class="components metrics metrics_card">
+    <a>metrics</a>
+    {{>handle}}
+    <ul>
+      <li># of each error type</li>
+      <li>overall test failures/passes</li>
+      <li># of @wip'd tests</li>
+      <li>running length of tests</li>
+      <li># ToDos</li>
+    </ul>
+  </div>
+</template>
+
+<template name="cifter">
+  <div class="components cifter">
+    <a>cifter</a>
+    {{>handle}}
+    <ul>
+      <li>runs tests in parallel</li>
+      <li>maintains status of tests</li>
+    </ul>
+  </div>
+</template>
+
+<template name="tests">
+  <div class="components tests">
+    <a>tests</a>
+    {{>handle}}
+    <ul>
+      <li>$lt 50, $gt 500, $gt 1000, ~10k</li>
+      <li>wipped/running</li>
+      <li>flaky</li>
+      <li>slow</li>
+    </ul>
+  </div>
+</template>
+
+<template name="basic_component">
+  <div class="components {{class}}">
+    <p>{{class}}</p>
+    {{>handle}}
+  </div>
+</template>
+
+
+
+
+<template name="handle">
+  <div class="handle"></div>
+</template>
+
+<template name="show">
+  <div class="show"></div>
+</template>
+
+<template name="imgpanel">
+  <a class="showimg"></a>
+  <img src='{{img}}' class="{{class}}" data="{{class}}">
+</template>
+
+<template name="imgclear">
+  <a class="imgclear"></a>
 </template>

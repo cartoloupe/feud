@@ -23,8 +23,12 @@ underscore
 accounts-password
 ian:accounts-ui-bootstrap-3
 twbs:bootstrap
+fortawesome:fontawesome
 anti:i18n
+raix:handlebar-helpers
 
 fourseven:scss
 mrt:jquery-ui
 dsyko:jquery-ui-touch-punch
+chuangbo:marked
+simple:highlight.js

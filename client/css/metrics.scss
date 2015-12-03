@@ -2,12 +2,81 @@
   box-sizing: border-box;
 }
 
-.components div {
+.components {
   font-size: 50px;
   width: 300px;
+  word-wrap: normal;
   margin: 3px;
   padding: 10px;
   border: 1px solid green;
   background-color: #ddd;
   position: absolute;
+  border-radius: 5%;
 }
+
+img {
+  display: none;
+  position: absolute;
+  left: -50%;
+  top: 90%;
+  z-index: -1;
+}
+
+.components .handle {
+  height: 25px;
+  width: 25px;
+  border: 1px solid black;
+  border-radius: 30%;
+}
+
+.components .handle + .show {
+  height: 25px;
+  width: 25px;
+  border: 10px solid green;
+  border-radius: 50%;
+  float: right;
+}
+
+.showimg {
+  height: 25px;
+  width: 25px;
+  border: 3px solid green;
+  border-radius: 50%;
+  float: right;
+}
+
+.imgclear {
+  height: 25px;
+  width: 25px;
+  left: -5px;
+  font-size: 16px;
+  float: right;
+  border: 3px solid red;
+  transform: rotate(45deg);
+}
+
+
+
+.components > ul, .codeblock {
+  display: none;
+}
+
+.codeblock {
+  font-size: 40px;
+
+  pre {
+    font-size: 30px;
+  }
+}
+
+.width500 {
+  width: 500px;
+}
+
+.width777 {
+  width: 777px;
+}
+
+
+.statsd_ruby { left: 15%; }
+.statsd_clients {left: 10%}
