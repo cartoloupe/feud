@@ -3,11 +3,12 @@
   <h3>with grafana et. al.</h3>
 
   <div class="components">
+    {{>summary}}
     {{>basic_component class="3rd party"}}
     {{>basic_component class="ceo"}}
     {{>basic_component class="pm"}}
     {{>basic_component class="stakeholders"}}
-    {{>basic_component class="jenkins"}}
+    {{>jenkins}}
     {{>basic_component class="me"}}
     {{>basic_component class="you"}}
     {{>basic_component class="users"}}
@@ -18,8 +19,9 @@
     {{>basic_component class="t1"}}
     {{>tests}}
     {{>cifter}}
-    {{>metrics_card}}
     {{>cql}}
+    {{>scripts}}
+    {{>metrics_card}}
     {{>statsd_clients}}
     {{>statsd_ruby}}
     {{>statsd}}
@@ -31,10 +33,28 @@
 
 <template name="graph">
   <div class="components graph">
-    <a class="show">grafana graphs</a>
-      <img src='/graph1.png'>
+    <a>grafana graphs</a>
     {{>handle}}
+    <ul>
+      <li>open source</li>
+      <li>feature rich metrics</li>
+      <li>dashboard and graph editor</li>
+      <li><a href="http://grafana.org/">http://grafana.org/</a></li>
+      <ul>
+        <li>Graphite</li>
+        <li>Elasticsearch</li>
+        <li>OpenTSDB</li>
+        <li>Prometheus</li>
+        <li>InfluxDB</li>
+      </ul>
+    </ul>
     {{>imgpanel img="/graph1.png"}}
+    {{>imgpanel img="/grafana_small_bars.png"}}
+    {{>imgpanel img="/grafana_zoomed_bars.png"}}
+    {{>imgpanel img="/grafana_static_statistics_gauge.png"}}
+    {{>imgpanel img="/grafana_confusing_bars.png"}}
+    {{>imgpanel img="/grafana_gauge_and_error_types.png"}}
+    {{>imgpanel img="/grafana_spiked_and_categorized.png"}}
     {{>imgclear}}
   </div>
 </template>
@@ -54,6 +74,14 @@
     <ul>
       <li>front-end proxy for graphite metrics server</li>
       <li>push-based</li>
+      <li>types of measurement</li>
+      <ul>
+        <li>gauges</li>
+        <li>counters</li>
+        <li>time</li>
+        <li>^ combines, transforms, etc...</li>
+        <li>count vs rate vs *</li>
+      </ul>
       <li><a href="https://github.com/etsy/statsd/wiki">wiki</a></li>
       <li><a href="https://github.com/b/statds_spec">protocol++</a></li>
     </ul>
@@ -70,7 +98,8 @@
 describe "#increment" do
 it "should format the message according to the statsd spec" do
   @statsd.increment('foobar')
-  @statsd.socket.recv.must_equal ['foobar:1|c']
+  @statsd.socket.recv
+    .must_equal ['foobar:1|c']
 end
 ```
       {{/markdown}}
@@ -80,10 +109,15 @@ end
 
 <template name="statsd_clients">
   <div class="components statsd_clients">
-    <a>statsd-clients</a>
+    <p>statsd-clients</p>
     {{>handle}}
+    {{>imgpanel img="/stats_clients_connections.png"}}
+    {{>imgpanel img="/stats_client_env.png"}}
     {{>imgpanel img="/statsd_clients.png"}}
     {{>imgpanel img="/static_statistics.png"}}
+    {{>imgpanel img="/metrics_report_methods.png"}}
+    {{>imgpanel img="/metrics_reporting_hash_of_errors.png"}}
+    {{>imgclear}}
   </div>
 </template>
 
@@ -97,11 +131,27 @@ end
     </ul>
 
     {{>imgpanel img="/cql_top.png"}}
-    {{>imgpanel img="/cql_total_tests.png"}}
     {{>imgpanel img="/cql_wipped_tests.png"}}
-    {{>imgpanel img="/cql_total_steps.png"}}
-    {{>imgpanel img="/cql_running_tests.png"}}
     {{>imgpanel img="/cql_tagged_tests.png"}}
+    {{>imgpanel img="/cql_running_tests.png"}}
+    {{>imgpanel img="/cql_total_tests.png"}}
+    {{>imgclear}}
+  </div>
+</template>
+
+<template name="scripts">
+  <div class="components scripts">
+    <a>scripts</a>
+    {{>handle}}
+    <ul>
+      <li>run after test sessions</li>
+      <li>run periodically via jenkins</li>
+      <li>report errors</li>
+      <li>categorize errors</li>
+    </ul>
+
+    {{>imgpanel img="/scripts_categorizing_errors.png"}}
+    {{>imgpanel img="/scripts_cql.png"}}
     {{>imgclear}}
   </div>
 </template>
@@ -148,6 +198,47 @@ end
   <div class="components {{class}}">
     <p>{{class}}</p>
     {{>handle}}
+  </div>
+</template>
+
+<template name="jenkins">
+  <div class="components jenkins">
+    <a>jenkins</a>
+    {{>handle}}
+    <ul>
+      <li>nightly regressions</li>
+      <li>reports on the dash</li>
+    </ul>
+
+    {{>imgpanel img="/jenkins.png"}}
+    {{>imgpanel img="/jenkins_build_triggers.png"}}
+    {{>imgpanel img="/jenkins_shell_script_setup.png"}}
+    {{>imgpanel img="/jenkins_inform_a_room.png"}}
+    {{>imgclear}}
+  </div>
+</template>
+
+<template name="summary">
+  <div class="components summary">
+    <a>summary</a>
+    {{>handle}}
+    <ul>
+      <li>enables:</li>
+      <ul>
+        <li>bvc</li>
+        <li>information</li>
+        <li>productivity</li>
+      </ul>
+      <li>but this is not:</li>
+      <ul>
+        <li>monitoring</li>
+        <li>risk assessment</li>
+        <li>prioritizing</li>
+      </ul>
+    </ul>
+
+    {{>imgpanel img="/jenkins.png"}}
+    {{>imgclear}}
   </div>
 </template>
 
